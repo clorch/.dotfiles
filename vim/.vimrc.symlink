@@ -1,0 +1,42 @@
+set nocompatible
+
+" Enable syntax highlighting
+syntax on
+filetype plugin indent on
+
+" Add line numbers
+set number
+set ruler
+
+" Set encoding
+set encoding=utf-8
+
+" Whitespace stuff
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Show trailing spaces and highlight hard tabs
+set list listchars=tab:»·,trail:·
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Search related settings
+set incsearch
+set hlsearch
+
+" Map Ctrl+l to clear highlighted searches
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
