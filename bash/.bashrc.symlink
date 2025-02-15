@@ -12,7 +12,11 @@ alias ls='ls $LS_OPTIONS'
 alias ll='ls $LS_OPTIONS -lh'
 alias la='ls $LS_OPTIONS -alh'
 alias grep="grep --color=auto"
-alias dud='du -chs  .[!.]* * | sort -h'
+
+dirsize() {
+    du -chx -d1 --exclude=/{proc,sys,dev,run} $* | sort -h
+}
+alias dud=dirsize
 alias netstats='netstat -tulpe --numeric-hosts --numeric-ports'
 
 # Some more alias to avoid making mistakes:
